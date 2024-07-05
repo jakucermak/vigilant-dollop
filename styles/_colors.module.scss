@@ -1,0 +1,22 @@
+/*
+Upravená paleta barev:
+Primary Color 1: #E6B450 (gold) - main elements, buttons, links
+Background: #0B0E14 (dark navy/black)
+Complementary Color 1: #5D737E (medium dark blue/grey) - text, icons, secondary elements
+Complementary Color 2: #FFE6B3 (light gold) - highlights, accent elements
+Complementary Color 3: #2A2D34 (dark grey) - shadows, borders, headers
+Accent Color: #FF5E00 (bright orange) - call-to-action buttons, alerts
+Neutral Color: #F2F4F6 (light grey) - backgrounds of boxes, secondary backgrounds, frames
+*/
+$primary: #e6b450;
+$background: #0b0e14;
+$comp: #5d737e;
+$comp2: #ffe6b3;
+$comp3: #2a2d34;
+$accent: #ff5e00;
+$neutral: #f2f4f6;
+
+:export {
+    primary: $primary;
+    background: $background;
+}
