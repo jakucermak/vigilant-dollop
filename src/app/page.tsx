@@ -14,7 +14,7 @@ export default function Home() {
 
   const [data, setData] = useState("me");
 
-  const handleRouteChange = (newData) => {
+  const handleRouteChange = (newData: string) => {
     if (data === "me" && newData !== data) {
       setCurrentSlide(1); // Přesun na další slide
     }

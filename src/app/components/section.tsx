@@ -9,7 +9,7 @@ const defaultProps: RouteProps = {
   text: "",
   selected: false,
 };
-function Route({ text, selected = false }: RouteProps) {
+export function Section({ text, selected = false }: RouteProps) {
   let dot;
   let content;
 
@@ -36,5 +36,3 @@ function Route({ text, selected = false }: RouteProps) {
     </div>
   );
 }
-
-export default Route;

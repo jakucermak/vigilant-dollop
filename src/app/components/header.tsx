@@ -2,7 +2,7 @@
 import styles from "@/styles/components/header.module.scss";
 import React, { useState } from "react";
 import Logo from "./logo";
-import Route, { RouteProps } from "./route";
+import { Section, RouteProps } from "./section";
 
 interface HeaderProps {
   onRouteChange: (route: string) => void;
@@ -42,7 +42,7 @@ export default function Header({ onRouteChange }: HeaderProps) {
         {routes.map((route, idx) => (
           // @ts-ignore
           <div onClick={handleClick} key={idx} name={route.text}>
-            <Route {...route} />
+            <Section {...route} />
           </div>
         ))}
       </div>
