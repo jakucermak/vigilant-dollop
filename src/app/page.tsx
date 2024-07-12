@@ -1,12 +1,11 @@
 "use client";
 import Header from "@/components/header";
 import styles from "@/styles/general.module.scss";
-// import styles from "@/styles/transition.module.scss";
 import { useState } from "react";
 import Blog from "./components/blog";
 import Terminal from "./components/terminal";
 
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import "react-responsive-carousel/lib/styles/carousel.css";
 import { Carousel } from "react-responsive-carousel";
 
 export default function Home() {
