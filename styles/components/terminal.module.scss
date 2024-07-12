@@ -6,21 +6,29 @@
     border: none;
     opacity: 0.5;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    margin: 1rem 0 0 0;
+    margin: 0.5rem 0 0 0;
+
+    @media (max-height: 800px) {
+        margin-top: 0rem;
+    }
 }
 .p {
     color: c.$text;
 }
 
 .container {
-    height: 80vh;
+    height: calc(100% - 7rem);
+
+    @media (max-height: 800px) {
+        height: calc(100% - 5rem);
+    }
 }
 
 .list_wrapper {
     max-height: 85%;
     overflow: scroll;
 
-    @media (max-width: 400px) {
+    @media (max-height: 800px) {
         max-height: 80%;
     }
 }
@@ -36,6 +44,7 @@
         word-wrap: break-word;
         word-break: break-all;
         border-left: 4px solid rgb(0, 0, 0, 0);
+        margin: 0.5rem 0;
     }
 }
 
@@ -88,6 +97,10 @@
 
     .failed_cmd {
         color: c.$failed;
+    }
+
+    p {
+        margin: 0.5rem 0;
     }
 }
 

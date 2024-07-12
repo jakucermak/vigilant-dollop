@@ -21,7 +21,7 @@
     opacity: 0.5;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 
-    @media (max-width: 800px) {
+    @media (max-height: 800px) {
         margin-top: 1rem;
     }
 }
@@ -33,6 +33,6 @@
     backdrop-filter: blur(13.1px);
     -webkit-backdrop-filter: blur(13.1px);
     border: 1px solid rgba(255, 255, 255, 0.56);
-    height: calc(100% - 2rem);
+    height: calc(100% - 1rem);
     margin: 0.5rem;
 }
