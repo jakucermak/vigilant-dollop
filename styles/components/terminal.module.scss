@@ -1,0 +1,102 @@
+@use "../colors.module" as c;
+
+.hr {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.56);
+    border: none;
+    opacity: 0.5;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    margin: 1rem 0 0 0;
+}
+.p {
+    color: c.$text;
+}
+
+.container {
+    height: 80vh;
+}
+
+.list_wrapper {
+    max-height: 85%;
+    overflow: scroll;
+
+    @media (max-width: 400px) {
+        max-height: 80%;
+    }
+}
+
+.prompt {
+    display: flex;
+    color: c.$text;
+    padding: 0 0 0.5rem 0;
+
+    p {
+        text-align: left;
+        padding-left: 1rem;
+        word-wrap: break-word;
+        word-break: break-all;
+        border-left: 4px solid rgb(0, 0, 0, 0);
+    }
+}
+
+.failed {
+    background-color: c.$failed_trans;
+    border-left: 4px solid c.$failed;
+    p {
+        padding-left: calc(1rem - 4px);
+    }
+}
+
+#cmd {
+    opacity: 0;
+    position: fixed;
+}
+
+.input {
+    color: c.$text;
+    padding-left: calc(1rem + 4px);
+    text-align: left;
+}
+
+#input {
+    display: flex;
+    p {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.box {
+    margin: 0% 0.15%;
+    animation: blink 1s step-end infinite;
+    color: #000;
+    width: 0.6em;
+    height: 1.3em;
+}
+
+#prompt {
+    display: flex;
+
+    .cmd {
+        padding-left: 0.2rem;
+        color: c.$text;
+    }
+
+    .success {
+        color: c.$success;
+    }
+
+    .failed_cmd {
+        color: c.$failed;
+    }
+}
+
+@keyframes blink {
+    from,
+    to {
+        background-color: c.$primary;
+    }
+    50% {
+        background-color: rgb(0, 0, 0, 0);
+    }
+}

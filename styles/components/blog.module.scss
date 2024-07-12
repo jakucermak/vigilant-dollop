@@ -1,0 +1,5 @@
+@use "../colors.module" as c;
+
+.blogPage {
+    color: c.$text;
+}

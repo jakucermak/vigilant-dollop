@@ -1,4 +1,38 @@
 @use "colors.module" as c;
+@use "fonts.module" as f;
+
 .body {
-    background-color: c.$background;
+    background-color: black;
+    /* background-image: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%); */
+    /* background-image: url(../public/macOS-Sequoia-Helios-Dark.jpg); */
+    background-size: cover;
+    font-family: "JetBrainsMono Nerd Font Mono";
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.hr {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.56);
+    margin: 0;
+    margin-top: 2rem;
+    border: none;
+    opacity: 0.5;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+    @media (max-width: 800px) {
+        margin-top: 1rem;
+    }
+}
+
+.container {
+    background: rgba(10, 14, 12, 0.8);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(13.1px);
+    -webkit-backdrop-filter: blur(13.1px);
+    border: 1px solid rgba(255, 255, 255, 0.56);
+    height: calc(100% - 2rem);
+    margin: 0.5rem;
 }

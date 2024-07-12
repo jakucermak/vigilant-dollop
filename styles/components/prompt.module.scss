@@ -1,0 +1,4 @@
+@use "../colors.module" as c;
+.prompt {
+    color: c.$primary;
+}

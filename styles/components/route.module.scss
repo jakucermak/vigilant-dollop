@@ -1,0 +1,32 @@
+@use "../colors.module" as c;
+
+.route {
+    height: 2rem;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s linear;
+    cursor: pointer;
+    user-select: none;
+
+    @media (max-width: 800px) {
+        height: 1.5rem;
+    }
+
+    &:hover {
+        border-bottom: 2px solid c.$primary;
+    }
+    .propBox {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .text {
+        color: c.$text;
+    }
+    .prop {
+        color: c.$prop;
+    }
+}

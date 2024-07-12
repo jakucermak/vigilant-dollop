@@ -1,0 +1,29 @@
+@use "../colors.module" as c;
+
+.header {
+    color: c.$primary;
+    display: flex;
+    flex-direction: row;
+    height: 4rem;
+    margin-top: 1rem;
+    justify-content: center;
+    width: 100%;
+    padding-left: calc(#{width} / 2);
+
+    .img {
+        padding: 0.5rem 2rem;
+    }
+
+    .routes {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 8rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .header {
+        height: 3rem;
+    }
+}
