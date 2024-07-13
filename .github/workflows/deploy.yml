@@ -25,3 +25,9 @@ jobs:
           ssh-keyscan -t rsa ${{ secrets.HOST }} >> ~/.ssh/known_hosts
           ssh ${{secrets.USER}}@${{ secrets.HOST }} "cd /home/github/vigilant-dollop && git pull origin main"
           echo "Successfully pulled repo."
+
+      - name: Docker build
+        run: |
+          cd ${{ github.workspace }}
+          ssh ${{secrets.USER}}@${{ secrets.HOST }} "cd vigilant-dollop && docker compose pull && docker-compose up -d"
+          echo "Successfully deployed app."
