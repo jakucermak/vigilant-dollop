@@ -34,5 +34,5 @@ jobs:
       - name: Docker Compose pull and up
         run: |
           cd ${{ github.workspace }}
-          ssh ${{secrets.USER}}@${{ secrets.HOST }} "cd vigilant-dollop && docker compose pull && docker compose up -d"
+          ssh ${{secrets.USER}}@${{ secrets.HOST }} "cd vigilant-dollop && docker compose up -d"
           echo "Successfully deployed app."
