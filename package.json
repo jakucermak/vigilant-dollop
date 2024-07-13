@@ -6,7 +6,8 @@
     "build": "next build",
     "dev": "next dev",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "classnames": "^2.5.1",
@@ -23,6 +24,7 @@
     "@types/react-transition-group": "^4.4.10",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
+    "patch-package": "^8.0.0",
     "sass": "^1.77.6",
     "typescript": "^5"
   }
