@@ -23,5 +23,5 @@ jobs:
         run: |
           cd ${{ github.workspace }}
           ssh-keyscan -t rsa ${{ secrets.HOST }} >> ~/.ssh/known_hosts
-          ssh ${{secrets.USER}}@${{ secrets.HOST }} "cd /home/git/vigilant-dollop && git pull origin main"
+          ssh ${{secrets.USER}}@${{ secrets.HOST }} "cd /home/github/vigilant-dollop && git pull origin main"
           echo "Successfully pulled repo."
