@@ -19,6 +19,7 @@
 # misc
 .DS_Store
 *.pem
+nginx/nginx.conf
 
 # debug
 npm-debug.log*
