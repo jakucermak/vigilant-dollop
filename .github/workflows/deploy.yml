@@ -29,5 +29,5 @@ jobs:
       - name: Docker build
         run: |
           cd ${{ github.workspace }}
-          ssh ${{secrets.USER}}@${{ secrets.HOST }} "cd vigilant-dollop && docker compose pull && docker-compose up -d"
+          ssh ${{secrets.USER}}@${{ secrets.HOST }} "cd vigilant-dollop && docker compose pull && docker compose up -d"
           echo "Successfully deployed app."
