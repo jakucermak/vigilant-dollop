@@ -1,4 +1,5 @@
 import Image from "next/image";
+// @ts-ignore
 import profilePic from "public/IMG_0905.JPG";
 import styles from "@/styles/components/commands/whois.module.scss";
 import {
