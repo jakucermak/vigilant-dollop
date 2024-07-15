@@ -10,14 +10,12 @@ import {
 } from "src/app/dto/command.dto";
 import { Command } from "src/utils/command";
 import { useEffect, useRef, useState } from "react";
+
 const content: string[] = [
-  "I studied at a hotel school in Turnov, but in the third year, I knew it would not be the right fit for me.",
-  "During high school, I lightly learned to program in the Scratch language.",
-  "That's how my hobby started. I moved on to the Swift language.",
-  "In Swift, I tried some more complex algorithms, started with OOP, and simple mobile applications.",
-  "Then I enrolled in Greenfox Academy, which I graduated from as a Python junior developer.",
-  "I feel more comfortable in back-end, but not scared with frontend. I enjoy trying different technologies, such as Docker, CI/CD.",
-  "I am interested in creating AI chatbots (ChatGPT), web scraping (to train some GPTs), and learning NodeJS, React, and TypeScript, which were used to build this project.",
+  "I began my education at a hotel school in Turnov, but by the third year, I realized it was not the right path for me. My interest in programming started in high school when I began learning Scratch, which sparked a passion for coding.",
+  "I quickly progressed to learning Swift, where I explored more complex algorithms, object-oriented programming (OOP), and developed simple mobile applications. Seeking to deepen my skills, I enrolled in Greenfox Academy and graduated as a Python junior developer.",
+  "While I feel more comfortable working on back-end development, I am also proficient in front-end technologies. I enjoy experimenting with various technologies, including Docker and CI/CD. My interests lie in creating AI chatbots, web scraping, and I am actively learning NodeJS, React, and TypeScript to enhance my project development skills.",
+  "I am enthusiastic about leveraging my diverse skill set to contribute to innovative projects and am eager to bring my passion for technology to a dynamic team.",
 ];
 
 function WhoisCommand() {
