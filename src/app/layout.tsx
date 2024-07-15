@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import styles from "@/styles/general.module.scss";
 export const metadata: Metadata = {
   title: "DVLPR JC",
-  description: "Developer Jakub Čermák",
+  description:
+    "Jakub Čermák, junior SW developer focused on frontend and backend development. Offers expertise in modern technologies such as React, Node.js, and Python.",
 };
 
 export default function RootLayout({

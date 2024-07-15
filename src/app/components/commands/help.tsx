@@ -32,7 +32,7 @@ class Help implements Command {
     return (
       <div>
         <p className={help.description}>{this.command.description}</p>
-        <table id={help.table}>
+        <table className={help.table}>
           <tbody className={help.body}>
             {commands.map((command) => (
               <tr key={command.name}>

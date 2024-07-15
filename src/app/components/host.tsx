@@ -14,7 +14,7 @@ export function Host({ hostMachine, prompt }: HostProps) {
     prompt as CommandName,
   );
   return (
-    <div id={terminal.prompt}>
+    <div className={terminal.command}>
       <p>{"user@" + hostMachine + ":~$ "}</p>
       <p
         className={[

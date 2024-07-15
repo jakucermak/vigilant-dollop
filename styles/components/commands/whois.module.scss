@@ -1,0 +1,91 @@
+@use "../../colors.module" as c;
+
+.container {
+    height: 100%;
+    width: 100%;
+    padding: 0 1rem 0 1rem;
+    img {
+        height: 100%;
+        width: auto;
+        object-fit: cover;
+        object-position: -2rem 0;
+        border-radius: 50% 2rem;
+        margin: 0;
+    }
+    h1 {
+        margin: 0;
+        text-align: left;
+    }
+    h2 {
+        font-size: 1rem;
+        font-weight: 200;
+        text-align: left;
+        font-style: italic;
+    }
+    p {
+        font-style: italic;
+        text-align: justify;
+        text-justify: inter-word;
+        position: relative;
+        font-weight: 200;
+        word-break: normal;
+        white-space: pre-wrap;
+        mix-blend-mode: difference;
+    }
+}
+
+.img {
+    width: 11rem;
+    height: 11rem;
+    overflow: hidden;
+    border-radius: 50% 2rem;
+    border: 2px solid c.$text;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: right;
+    shape-outside: margin-box;
+    margin: 1rem;
+}
+
+.content {
+}
+
+.blockquote {
+    font-size: 1rem;
+    font-style: italic;
+    width: 90%;
+    margin: 1rem 2rem;
+    color: c.$text;
+    padding: 1.2em 30px 1.2em 2rem;
+    line-height: 1.6;
+    position: relative;
+
+    @media (max-width: 1024px) {
+        margin: 1rem 0rem;
+        padding: 1.2em 0px 1.2em 1rem;
+    }
+}
+
+/* .blockquote::before {
+    font-family: Arial;
+    content: "\201C";
+    color: c.$primary;
+    font-size: 4em;
+    position: absolute;
+    left: 10px;
+    top: -10px;
+} */
+
+.blockquote::before {
+    font-family: Arial;
+    content: "\201C";
+
+    font-size: 13rem;
+    position: absolute;
+    left: -1rem;
+    top: -5rem;
+    opacity: 0.1;
+    width: 100%;
+    text-align: start;
+}

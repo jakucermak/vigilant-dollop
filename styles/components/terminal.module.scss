@@ -25,12 +25,12 @@
 }
 
 .list_wrapper {
-    max-height: 85%;
+    max-height: 90%;
     overflow: scroll;
 
-    @media (max-height: 800px) {
+    /* @media (max-height: 800px) {
         max-height: 90%;
-    }
+    } */
 }
 
 .prompt {
@@ -83,7 +83,7 @@
     height: 1.3em;
 }
 
-#prompt {
+.command {
     display: flex;
 
     .cmd {
