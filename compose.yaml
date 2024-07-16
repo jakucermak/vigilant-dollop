@@ -11,6 +11,7 @@ services:
   nextjs:
     image: nextjs:latest
     container_name: nextjs
+    env_file: ./.env
 
     develop:
       watch:
