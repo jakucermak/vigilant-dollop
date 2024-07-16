@@ -1,11 +1,37 @@
+"use client";
 import { CommandDto, CommandName } from "src/app/dto/command.dto";
 import { Command } from "src/utils/command";
 import styles from "@/styles/components/commands/contact.module.scss";
 import chevron from "@/styles/components/chevron.module.scss";
 import carousel from "@/styles/components/carousel.module.scss";
 import { useEffect, useRef, useState } from "react";
+import { sendEmail } from "src/utils/sendEmail";
+import colors from "@/styles/_colors.module.scss";
+import { useForm } from "react-hook-form";
+
+export type FormData = {
+  name: string;
+  email: string;
+  message: string;
+};
 
 function LeaveAMessage() {
+  const { register, handleSubmit, reset } = useForm<FormData>({
+    mode: "onChange",
+  });
+
+  function onSubmit(data: FormData) {
+    sendEmail(data)
+      .then((res) => res.json())
+      .then((response) => {
+        alert(response.message);
+        reset({ name: "", email: "", message: "" });
+      })
+      .catch((err) => {
+        alert(err);
+      });
+  }
+
   return (
     <div className={styles.cc}>
       <div style={{ height: "90%" }}>
@@ -14,24 +40,27 @@ function LeaveAMessage() {
           <hr className={styles.hr} />
           <hr className={[styles.hr, styles.bottom].join(" ")} />
         </div>
-        <form style={{ height: "100%" }}>
+        <form style={{ height: "100%" }} onSubmit={handleSubmit(onSubmit)}>
           <div style={{ flexDirection: "row" }}>
             <input
               className={styles.name}
               type="text"
               placeholder="Name"
-              required
+              {...register("name", { required: true })}
             />
             <span className={styles.span} />
             <input
               className={styles.name}
               type="email"
               placeholder="Email"
-              required
+              {...register("email", { required: true })}
             />
           </div>
-          <textarea placeholder="Message" required></textarea>
-          <button>Send</button>
+          <textarea
+            placeholder="Message"
+            {...register("message", { required: true })}
+          ></textarea>
+          <button type="submit">Send</button>
         </form>
       </div>
     </div>
@@ -79,13 +108,16 @@ function ContactMe() {
         <hr className={styles.hr} />
         <hr className={[styles.hr, styles.bottom].join(" ")} />
       </div>
-      <div className={styles.link}>
+      <div className={styles.links}>
         <a
           href="https://www.linkedin.com/in/jakub-čermák/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div style={{ fontSize: "2.5rem" }} className={styles.icon}>
+          <div
+            style={{ fontSize: "2.5rem" }}
+            className={[styles.icon, styles.link].join(" ")}
+          >
             &#xf08c;
           </div>
         </a>
@@ -94,7 +126,10 @@ function ContactMe() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div style={{ fontSize: "2.5rem" }} className={styles.icon}>
+          <div
+            style={{ fontSize: "2.5rem" }}
+            className={[styles.icon, styles.link].join(" ")}
+          >
             &#xe65b;
           </div>
         </a>
@@ -105,6 +140,7 @@ function ContactMe() {
 
 function Chevron() {
   const chevronRef = useRef<HTMLDivElement>(null);
+  const [isShown, setIsShown] = useState(false);
 
   const handleClick = () => {
     if (chevronRef.current) {
@@ -117,9 +153,23 @@ function Chevron() {
       ref={chevronRef}
       onClick={handleClick}
       className={[chevron.chevron, chevron.chevron_1].join(" ")}
+      onMouseEnter={() => setIsShown(true)}
+      onMouseLeave={() => setIsShown(false)}
     >
-      <span></span>
-      <span></span>
+      <span
+        style={
+          isShown
+            ? { backgroundColor: colors.primary }
+            : { backgroundColor: colors.text }
+        }
+      ></span>
+      <span
+        style={
+          isShown
+            ? { backgroundColor: colors.primary }
+            : { backgroundColor: colors.text }
+        }
+      ></span>
     </div>
   );
 }
@@ -147,18 +197,19 @@ function CcCarousel() {
   }, [slide]);
 
   const listComponents = [
-    <li key={0} className={[carousel.li, carousel.visibleFirst].join(" ")}>
+    <li key={0} className={carousel.li}>
       <ContactMe />
     </li>,
-    <li
+    <div
+      className={styles.chevron_container}
       key={1}
-      className={[carousel.li, carousel.visible].join(" ")}
-      style={{ minWidth: "20%" }}
       onClick={() => goToSlide()}
     >
-      <Chevron />
-    </li>,
-    <li key={2} className={[carousel.li, carousel.hiddenLast].join(" ")}>
+      <li className={[carousel.li, styles.chevron].join(" ")}>
+        <Chevron />
+      </li>{" "}
+    </div>,
+    <li key={2} className={carousel.li}>
       <LeaveAMessage />
     </li>,
   ];
