@@ -10,11 +10,15 @@
     "postinstall": "patch-package"
   },
   "dependencies": {
+    "@types/nodemailer": "^6.4.15",
     "classnames": "^2.5.1",
     "next": "14.2.4",
+    "nodemailer": "^6.9.14",
     "react": "^18",
     "react-dom": "^18",
-    "react-responsive-carousel": "^3.2.23"
+    "react-hook-form": "^7.52.1",
+    "react-responsive-carousel": "^3.2.23",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@previewjs/config-helper-nextjs": "^1.0.27",

@@ -1,0 +1,79 @@
+@use "../colors.module" as c;
+$primaryColor: c.$primary;
+$backgroundColor: c.$border;
+$borderColor: c.$border;
+// Dimensions
+$width: 1;
+$height: 25;
+$borderRadius: 2;
+$chevronMargin: 10;
+// Angles
+$baseAngle: 40;
+
+.chevron {
+    padding-top: 20px;
+}
+
+.chevron {
+    text-align: center;
+    padding: 0 0;
+    width: 3rem;
+    display: inline-block;
+    border: none;
+
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.chevron span {
+    background-color: $backgroundColor;
+    border: solid 1px $borderColor;
+    display: block;
+
+    height: $height + px;
+    width: $width + px;
+
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+    position: relative;
+    left: 24px;
+}
+
+/* Chevron 1 */
+
+.chevron_1 span:nth-child(1) {
+    transform: rotate($baseAngle + deg);
+}
+
+.chevron_1 span:nth-child(2) {
+    margin-top: (-($width * 6)) + px;
+    transform: rotate((180-$baseAngle) + deg);
+}
+
+.chevron_1.active span:nth-child(1) {
+    transform: rotate(-$baseAngle + deg);
+}
+
+.chevron_1.active span:nth-child(2) {
+    transform: rotate((180 + $baseAngle) + deg);
+}
+
+/* Right */
+
+.chevron_1.chevron-start-right span:nth-child(1) {
+    transform: rotate(-($baseAngle) + deg);
+}
+.chevron_1.chevron-start-right span:nth-child(2) {
+    transform: rotate($baseAngle + deg);
+}
+.chevron_1.active.chevron-start-right span:nth-child(1) {
+    transform: rotate($baseAngle + deg);
+}
+.chevron_1.active.chevron-start-right span:nth-child(2) {
+    transform: rotate(-$baseAngle + deg);
+}
