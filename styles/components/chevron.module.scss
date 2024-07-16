@@ -1,7 +1,7 @@
 @use "../colors.module" as c;
-$primaryColor: c.$text;
-$backgroundColor: $primaryColor;
-$borderColor: $primaryColor;
+$primaryColor: c.$primary;
+$backgroundColor: c.$border;
+$borderColor: c.$border;
 // Dimensions
 $width: 1;
 $height: 25;
@@ -16,8 +16,8 @@ $baseAngle: 40;
 
 .chevron {
     text-align: center;
-    padding: 0 10px;
-    width: auto;
+    padding: 0 0;
+    width: 3rem;
     display: inline-block;
     border: none;
 
@@ -40,6 +40,8 @@ $baseAngle: 40;
     -moz-transition: 0.25s ease-in-out;
     -o-transition: 0.25s ease-in-out;
     transition: 0.25s ease-in-out;
+    position: relative;
+    left: 24px;
 }
 
 /* Chevron 1 */

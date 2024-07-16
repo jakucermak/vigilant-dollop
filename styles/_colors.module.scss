@@ -8,9 +8,10 @@ Complementary Color 3: #2A2D34 (dark grey) - shadows, borders, headers
 Accent Color: #FF5E00 (bright orange) - call-to-action buttons, alerts
 Neutral Color: #F2F4F6 (light grey) - backgrounds of boxes, secondary backgrounds, frames
 */
-$primary: #e6b450;
+$primary: rgba(230, 180, 80, 1);
 $background: #0b0e14;
 $text: #bfbdb6;
+$border: rgba(191, 189, 182, 0.2);
 $failed: rgba(255, 86, 85, 1);
 $failed_trans: rgba(255, 86, 85, 0.2);
 $success: #aad94c;
@@ -23,5 +24,6 @@ $neutral: #f2f4f6;
 
 :export {
     primary: $primary;
+    text: $text;
     background: $background;
 }
