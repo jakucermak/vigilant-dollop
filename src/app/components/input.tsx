@@ -33,7 +33,7 @@ export function Input({ isSelected, host, onBlur, onEnter }: TerminalProps) {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [value]);
+  });
 
   return (
     <div className={styles.input}>
