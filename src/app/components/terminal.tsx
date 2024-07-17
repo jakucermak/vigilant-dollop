@@ -62,6 +62,8 @@ export default function Terminal({ isSelected }: TerminalProps) {
   const [clientData, setClientData] = useState("unknown");
   const [focus, setFocus] = useState(isSelected);
   const list_wrapperRef = useRef<HTMLDivElement>(null);
+  const lastItemRef: any = useRef(null);
+  const [lastPromptHeight, setLastPromptHeight] = useState(0);
 
   const handleFocus = () => {
     setFocus(true);
@@ -91,9 +93,13 @@ export default function Terminal({ isSelected }: TerminalProps) {
 
   useEffect(() => {
     if (list_wrapperRef.current) {
-      list_wrapperRef.current.scrollTop = list_wrapperRef.current.scrollHeight;
+      setLastPromptHeight(lastItemRef.current.clientHeight);
+      list_wrapperRef.current.scrollTo({
+        top: list_wrapperRef.current.scrollHeight - lastPromptHeight,
+        behavior: "smooth",
+      });
     }
-  }, [prompts]);
+  }, [prompts, lastPromptHeight]);
 
   useEffect(() => {
     window.addEventListener("keydown", handleKeyPress);
@@ -106,21 +112,23 @@ export default function Terminal({ isSelected }: TerminalProps) {
     <div className={styles.container} onClick={() => handleFocus()}>
       <div className={styles.list_wrapper} ref={list_wrapperRef}>
         <ul style={{ padding: "0" }}>
-          <li>
-            {prompts.map((prompt, index) => (
-              <div
-                key={index}
-                className={
-                  prompt.command.name == "unknown" ? styles.failed : ""
-                }
-              >
-                <div className={styles.prompt}>
-                  <Prompt prompt={prompt} clientData={clientData} />
+          {prompts.map((prompt, index) => {
+            const isLastPrompt = index === prompts.length - 1;
+            return (
+              <li key={index} ref={isLastPrompt ? lastItemRef : null}>
+                <div
+                  className={
+                    prompt.command.name == "unknown" ? styles.failed : ""
+                  }
+                >
+                  <div className={styles.prompt}>
+                    <Prompt prompt={prompt} clientData={clientData} />
+                  </div>
+                  <hr className={styles.hr} />
                 </div>
-                <hr className={styles.hr} />
-              </div>
-            ))}
-          </li>
+              </li>
+            );
+          })}
         </ul>
       </div>
       <div>
