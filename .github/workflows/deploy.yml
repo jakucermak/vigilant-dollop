@@ -31,8 +31,14 @@ jobs:
           cd ${{ github.workspace }}
           ssh ${{secrets.USER}}@${{ secrets.HOST }} "cd vigilant-dollop && docker build -t nextjs:latest -f Dockerfile ."
           ssh ${{secrets.USER}}@${{ secrets.HOST }} "cd vigilant-dollop && docker build -t nginx:latest -f nginx/Dockerfile nginx"
-      - name: Docker Compose pull and up
+          echo "Sucessfully built images"
+      - name: Docker Compose Up
         run: |
           cd ${{ github.workspace }}
           ssh ${{secrets.USER}}@${{ secrets.HOST }} "cd vigilant-dollop && docker compose up -d"
           echo "Successfully deployed app."
+      - name: Docker Clean Up
+        run: |
+          cd ${{ github.workspace }}
+          ssh ${{secrets.USER}}@${{ secrets.HOST }} "docker image prune -a -f && docker builder prune -f"
+          echo "Sucessfully cleaned up docker space"
