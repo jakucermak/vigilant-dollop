@@ -24,10 +24,8 @@ function WhoisCommand() {
   useEffect(() => {
     if (imgContainerRef.current) {
       if (visible) {
-        console.log("visible");
         imgContainerRef.current.classList.add(styles.visible);
       } else {
-        console.log("not visible");
         imgContainerRef.current.classList.remove(styles.visible);
       }
     }
