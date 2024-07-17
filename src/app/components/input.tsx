@@ -48,6 +48,7 @@ export function Input({ isSelected, host, onBlur, onEnter }: TerminalProps) {
         value={value}
         onChange={(e) => setValue(e.target.value)}
         onBlur={onBlur}
+        autoCapitalize="none"
       />
     </div>
   );
