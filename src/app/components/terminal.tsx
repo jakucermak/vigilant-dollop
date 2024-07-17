@@ -18,6 +18,8 @@ function getCommandName(cmdName: string): CommandName {
       return CommandName.STACK;
     case "clear":
       return CommandName.CLEAR;
+    case "ed":
+      return CommandName.ED;
     default:
       return CommandName.UNKNOWN;
   }
