@@ -83,30 +83,24 @@ export default function Terminal({ isSelected }: TerminalProps) {
 
   const handleEnter = (value: string) => {
     const prompt = createPrompt(value);
-    setPrompts((prev) => [...prev, prompt]);
-  };
-  const handleKeyPress = (e: KeyboardEvent) => {
-    if (e.key === "Enter") {
-      console.log("Enter");
+    if (prompt.command.name === CommandName.CLEAR) {
+      setPrompts([]);
+      return;
     }
+    setPrompts((prev) => [...prev, prompt]);
   };
 
   useEffect(() => {
     if (list_wrapperRef.current) {
-      setLastPromptHeight(lastItemRef.current.clientHeight);
-      list_wrapperRef.current.scrollTo({
-        top: list_wrapperRef.current.scrollHeight - lastPromptHeight,
-        behavior: "smooth",
-      });
+      if (prompts.length !== 0) {
+        setLastPromptHeight(lastItemRef.current.clientHeight);
+        list_wrapperRef.current.scrollTo({
+          top: list_wrapperRef.current.scrollHeight - lastPromptHeight,
+          behavior: "smooth",
+        });
+      }
     }
   }, [prompts, lastPromptHeight]);
-
-  useEffect(() => {
-    window.addEventListener("keydown", handleKeyPress);
-    return () => {
-      window.removeEventListener("keydown", handleKeyPress);
-    };
-  }, []);
 
   return (
     <div className={styles.container} onClick={() => handleFocus()}>
