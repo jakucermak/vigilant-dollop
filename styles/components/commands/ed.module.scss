@@ -1,0 +1,119 @@
+@use "../../colors.module" as c;
+.container {
+    text-align: left;
+    margin: 0 1rem 0 0;
+    padding: 1rem 1rem 0 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    height: inherit;
+
+    h2 {
+        margin: 0;
+    }
+
+    h3 {
+        margin: 0;
+        width: 100%;
+    }
+
+    @media (max-width: 1024px) {
+        padding: 1rem 1rem 0 1rem;
+    }
+}
+
+.address {
+    margin: 0;
+    padding: 0;
+}
+
+.blockquote {
+    font-size: 1rem;
+    font-style: italic;
+    width: 90%;
+    margin: 0;
+    color: c.$text;
+    padding: 0;
+    line-height: 1.6;
+    position: relative;
+
+    @media (max-width: 1024px) {
+        margin: 0rem 0rem;
+        padding: 0 0px;
+        width: 100%;
+    }
+}
+
+.table {
+    height: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 1rem;
+
+    tr {
+        border-bottom: 1px solid c.$border;
+    }
+
+    tr:last-child {
+        border: 0;
+    }
+
+    td {
+        display: flex;
+        padding: 1rem 1rem;
+        @media (max-width: 1024px) {
+            flex-direction: column;
+        }
+    }
+}
+
+.school {
+    width: 85%;
+    margin: auto 0;
+
+    @media (max-width: 1024px) {
+        width: 100%;
+    }
+}
+
+.study {
+    margin: 0;
+    width: 50%;
+    font-style: italic;
+}
+.degree {
+    margin: 0;
+    width: 50%;
+}
+
+.date {
+    white-space: pre-line;
+    width: 15%;
+    margin: auto;
+    p {
+        text-align: right;
+        margin: 0;
+        padding: 0 1rem 0 0;
+    }
+
+    @media (max-width: 1024px) {
+        text-align: left;
+        padding: 0;
+        width: 100%;
+        display: flex;
+    }
+}
+
+.blockquote::before {
+    content: "\f19d";
+
+    font-size: 13rem;
+    position: absolute;
+    left: 4%;
+    top: -9rem;
+    opacity: 0.1;
+    text-align: start;
+
+    @media (max-width: 1024px) {
+        left: -1rem;
+    }
+}

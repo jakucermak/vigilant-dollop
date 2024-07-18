@@ -18,6 +18,8 @@ function getCommandName(cmdName: string): CommandName {
       return CommandName.STACK;
     case "clear":
       return CommandName.CLEAR;
+    case "ed":
+      return CommandName.ED;
     default:
       return CommandName.UNKNOWN;
   }
@@ -100,12 +102,12 @@ export default function Terminal({ isSelected }: TerminalProps) {
         });
       }
     }
-  }, [prompts, lastPromptHeight]);
+  }, [lastPromptHeight, prompts]);
 
   return (
     <div className={styles.container} onClick={() => handleFocus()}>
       <div className={styles.list_wrapper} ref={list_wrapperRef}>
-        <ul style={{ padding: "0" }}>
+        <ul className={styles.ul}>
           {prompts.map((prompt, index) => {
             const isLastPrompt = index === prompts.length - 1;
             return (

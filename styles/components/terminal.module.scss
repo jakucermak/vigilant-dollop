@@ -17,53 +17,59 @@
 }
 
 .container {
-    height: calc(100%);
-
-    @media (max-height: 800px) {
-        height: calc(100%);
-    }
+    height: 100%;
 }
 
 .list_wrapper {
-    max-height: 90%;
     overflow: scroll;
+    max-height: calc(100% - 5rem);
+}
 
-    /* @media (max-height: 800px) {
-        max-height: 90%;
-    } */
+.ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
 }
 
 .prompt {
     display: flex;
     color: c.$text;
-    padding: 0 0 0.5rem 0;
+    padding: 0 0 0.5rem 1rem;
 
     p {
-        text-align: left;
-        padding-left: 1rem;
+        /* padding-left: 1rem;
         word-wrap: break-word;
         word-break: break-all;
-        border-left: 4px solid rgb(0, 0, 0, 0);
-        margin: 0.5rem 0;
+        border-left: 4px solid rgb(0, 0, 0, 0); */
     }
+}
+
+.host {
 }
 
 .failed {
     background-color: c.$failed_trans;
     border-left: 4px solid c.$failed;
     p {
-        padding-left: calc(1rem - 4px);
+        position: relative;
+        left: -4px;
+        text-align: left;
     }
 }
 
 #cmd {
     opacity: 0;
     position: fixed;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    width: 0;
 }
 
 .input {
     color: c.$text;
-    padding-left: calc(1rem + 4px);
+    padding-left: 1rem;
     text-align: left;
 }
 

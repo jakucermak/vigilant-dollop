@@ -1,4 +1,3 @@
-// import styles from "@/styles/components/prompt.module.scss";
 import { Host } from "./host";
 import { CommandName } from "../dto/command.dto";
 import { Command } from "src/utils/command";
@@ -8,6 +7,7 @@ import { Prompt as PromptDto } from "../dto/prompt.dto";
 import Contact from "./commands/contact";
 import { Whois } from "./commands/whois";
 import { Stack } from "./commands/stack";
+import { Ed } from "./commands/ed";
 
 function getCommand(command: CommandName): Command {
   switch (command) {
@@ -19,6 +19,8 @@ function getCommand(command: CommandName): Command {
       return new Whois();
     case CommandName.STACK:
       return new Stack();
+    case CommandName.ED:
+      return new Ed();
     default:
       return new Unknown();
   }
