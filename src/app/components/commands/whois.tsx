@@ -44,6 +44,7 @@ function WhoisCommand() {
             onLoad={(e) => {
               setVisiblity(true);
             }}
+            loading="eager"
           />
         </div>
         <blockquote className={styles.blockquote}>
