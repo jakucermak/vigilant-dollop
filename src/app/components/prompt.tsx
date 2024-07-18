@@ -1,4 +1,3 @@
-// import styles from "@/styles/components/prompt.module.scss";
 import { Host } from "./host";
 import { CommandName } from "../dto/command.dto";
 import { Command } from "src/utils/command";

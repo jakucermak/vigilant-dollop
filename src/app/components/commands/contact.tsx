@@ -88,7 +88,7 @@ function ContactMe() {
               <div className={styles.icon}>&#xf0e0;</div>
             </td>
             <td>&nbsp;</td>
-            <td>jakucermak@gmail.com</td>
+            <td>info@jakubcermak.com</td>
           </tr>
           <tr>
             <td>

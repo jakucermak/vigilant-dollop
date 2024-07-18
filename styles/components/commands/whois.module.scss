@@ -15,9 +15,11 @@
     }
     h1 {
         margin: 0;
+        padding: 0 0 0 1rem;
         text-align: left;
     }
     h2 {
+        padding: 0 0 0 1rem;
         font-size: 1rem;
         font-weight: 200;
         text-align: left;
@@ -32,6 +34,7 @@
         word-break: normal;
         white-space: pre-wrap;
         mix-blend-mode: difference;
+        margin: 0.5rem 0;
     }
 }
 

@@ -1,6 +1,6 @@
 import terminal from "@/styles/components/terminal.module.scss";
 import { CommandName } from "../dto/command.dto";
-import classNames from "classnames";
+
 interface HostProps {
   hostMachine: string;
   prompt?: string;
@@ -15,7 +15,7 @@ export function Host({ hostMachine, prompt }: HostProps) {
   );
   return (
     <div className={terminal.command}>
-      <p>{"user@" + hostMachine + ":~$ "}</p>
+      <p className={terminal.host}>{"user@" + hostMachine + ":~$ "}</p>
       <p
         className={[
           terminal.cmd,
