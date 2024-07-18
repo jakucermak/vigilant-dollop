@@ -51,7 +51,7 @@ export class Ed implements Command {
       description: CommandDescription.ED,
     };
   }
-  execute(content?: string): JSX.Element {
+  execute(): JSX.Element {
     return (
       <div className={styles.container}>
         <h2>Education</h2>

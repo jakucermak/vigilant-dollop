@@ -65,7 +65,7 @@ export class Whois implements Command {
       description: CommandDescription.WHOIS,
     };
   }
-  execute(content?: string): JSX.Element {
+  execute(): JSX.Element {
     return <WhoisCommand />;
   }
 }
