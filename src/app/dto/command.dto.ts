@@ -3,6 +3,7 @@ enum CommandName {
   WHOIS = "whois",
   ED = "ed",
   STACK = "stack",
+  PRJE = "prje",
   CLEAR = "clear",
   HELP = "help",
   UNKNOWN = "unknown",
@@ -13,6 +14,7 @@ enum CommandDescription {
   WHOIS = "Shows basic information about me.",
   ED = "Shows the list of my education and certifications.",
   STACK = "Lists the technologies and tools I use.",
+  PRJE = "Displays the list of my projects and experiences.",
   CLEAR = "Clears the console content.",
   HELP = "Shows this, displays available commands with descriptions.",
 

@@ -20,6 +20,8 @@ function getCommandName(cmdName: string): CommandName {
       return CommandName.CLEAR;
     case "ed":
       return CommandName.ED;
+    case "prje":
+      return CommandName.PRJE;
     default:
       return CommandName.UNKNOWN;
   }

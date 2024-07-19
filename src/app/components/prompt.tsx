@@ -8,6 +8,7 @@ import Contact from "./commands/contact";
 import { Whois } from "./commands/whois";
 import { Stack } from "./commands/stack";
 import { Ed } from "./commands/ed";
+import Prje from "./commands/prje";
 
 function getCommand(command: CommandName): Command {
   switch (command) {
@@ -21,6 +22,8 @@ function getCommand(command: CommandName): Command {
       return new Stack();
     case CommandName.ED:
       return new Ed();
+    case CommandName.PRJE:
+      return new Prje();
     default:
       return new Unknown();
   }
