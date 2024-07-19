@@ -133,6 +133,10 @@ function BackEnd() {
       name: "Celery",
       level: 4,
     },
+    {
+      level: 3,
+      name: "PyTest",
+    },
   ];
   return (
     <div className={styles.table_container}>
