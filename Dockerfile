@@ -1,4 +1,4 @@
-ARG NODE_VERSION=22
+ARG NODE_VERSION=20
 
 ################################################################################
 # Use node image for base image for all stages.
