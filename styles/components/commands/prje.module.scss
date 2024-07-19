@@ -1,0 +1,55 @@
+@use "../../colors.module" as c;
+.container {
+    text-align: left;
+    margin: 0 1rem;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    height: inherit;
+    h3 {
+        margin: 0;
+    }
+    h4 {
+        margin: 0;
+    }
+
+    ul {
+        list-style: none;
+        padding: 1rem 0 0 0;
+    }
+}
+
+.row {
+    display: flex;
+}
+
+.col0 {
+    width: 25%;
+    text-align: right;
+    padding-right: 1rem;
+}
+
+.col1 {
+    width: 75%;
+}
+
+.collab {
+    word-break: break-word;
+}
+
+.yr {
+    margin: 0;
+    white-space: pre-line;
+}
+
+.desc {
+    font-weight: 200;
+    padding-left: 1rem;
+    margin: 0;
+    border-left: 1px solid c.$primary;
+}
+
+.name {
+    margin: 0.5rem 0;
+    font-weight: 100;
+}
